@@ -47,7 +47,7 @@
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/lato_light"
                 android:text="@string/username_label"
-                android:textColor="@color/lightGrey"
+                android:textColor="@color/lightGreyPrimary"
                 android:textSize="16sp" />
 
             <EditText
@@ -75,7 +75,7 @@
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/lato_light"
                 android:text="@string/password_label"
-                android:textColor="@color/lightGrey"
+                android:textColor="@color/lightGreyPrimary"
                 android:textSize="16sp" />
 
             <EditText

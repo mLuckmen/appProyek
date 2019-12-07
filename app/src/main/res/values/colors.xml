@@ -6,7 +6,8 @@
 
 
     <color name="group">#0288D1</color>
-    <color name="lightGrey">#8D8D8D</color>
+    <color name="lightGreyPrimary">#8D8D8D</color>
+    <color name="lightGreySecondary">#E5E5E5</color>
 
     <color name="bluePrimary">#1976D2</color>
     <color name="blueSecondary">#37B2F8</color>
