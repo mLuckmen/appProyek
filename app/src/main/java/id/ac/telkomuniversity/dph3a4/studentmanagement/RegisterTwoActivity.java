@@ -18,15 +18,6 @@ public class RegisterTwoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_two);
 
-        btn_back = findViewById(R.id.btn_back);
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent backtorev = new Intent(RegisterTwoActivity.this, RegisterOneActivity.class);
-                startActivity(backtorev);
-            }
-        });
-
         btn_continue = findViewById(R.id.btn_continue);
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override

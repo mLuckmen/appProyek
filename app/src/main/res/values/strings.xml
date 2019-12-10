@@ -12,4 +12,12 @@
     <string name="fullname_label">Nama Lengkap</string>
     <string name="phone_label">No HP</string>
     <string name="line_label">ID Line</string>
+
+    <string name="error_message_username">Masukkan Nama Pengguna</string>
+    <string name="error_message_email">Masukkan Alamat Email</string>
+    <string name="error_message_password">Masukkan Kata Sandi</string>
+    <string name="success_message">Registrasi Berhasil</string>
+    <string name="error_username_exists">Username Sudah Tersedia</string>
+    <string name="error_password_match">Kata Sandi Tidak Sama</string>
+    <string name="error_valid_email_pass">Nama Pengguna atau Kata Sandi Salah</string>
 </resources>
