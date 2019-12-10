@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/btn_continue2"
+        android:id="@+id/btn_goLogin"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginRight="48dp"

@@ -73,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                 pref.userHasLoggedIn(true);
 
                 Intent gotohome = new Intent(LoginActivity.this, HomeActivity.class);
+                gotohome.putExtra("username", textInputUsername.getText().toString());
                 emptyField();
                 startActivity(gotohome);
         } else {
