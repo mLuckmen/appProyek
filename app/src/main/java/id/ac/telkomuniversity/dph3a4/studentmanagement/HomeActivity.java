@@ -21,10 +21,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        usernameText = findViewById(R.id.usernameText);
-        String username = getIntent().getStringExtra("username");
-        usernameText.setText(username);
-
         btn_logout = findViewById(R.id.btn_logout);
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -18,7 +18,6 @@ public class LoginActivity extends AppCompatActivity {
     private final AppCompatActivity activity = LoginActivity.this;
 
     Button btn_login;
-    TextView btn_new_account;
     TextInputEditText textInputUsername, textInputPassword;
     TextInputLayout textInputUsernameLayout, textInputPasswordLayout;
 
@@ -32,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        sqliteHelper = new SqliteHelper(activity);
+        sqliteHelper = new SqliteHelper(getApplicationContext());
         inputValidation = new InputValidation(activity);
 
         textInputUsername = findViewById(R.id.textInputUsername);
@@ -48,15 +47,6 @@ public class LoginActivity extends AppCompatActivity {
                 verifyFromSQLite();
             }
         });
-
-        btn_new_account = findViewById(R.id.btn_new_account);
-        btn_new_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent gotoregisterone = new Intent(LoginActivity.this, RegisterOneActivity.class);
-                startActivity(gotoregisterone);
-            }
-        });
     }
 
     private void verifyFromSQLite() {
@@ -67,10 +57,12 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        if (sqliteHelper.checkLogin(textInputUsername.getText().toString().trim(),
-                textInputPassword.getText().toString().trim())){
+        int userId = sqliteHelper.checkLogin(textInputUsername.getText().toString().trim(),
+                textInputPassword.getText().toString().trim());
+        if (userId != 0){
                 Preference pref = new Preference(getApplicationContext());
                 pref.userHasLoggedIn(true);
+                pref.setUserCredentials(userId);
 
                 Intent gotohome = new Intent(LoginActivity.this, HomeActivity.class);
                 gotohome.putExtra("username", textInputUsername.getText().toString());

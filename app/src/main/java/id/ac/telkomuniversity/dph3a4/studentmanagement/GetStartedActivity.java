@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class GetStartedActivity extends AppCompatActivity {
 
-    Button btn_sign_in, btn_new_account_create;
+    Button btn_sign_in;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,6 @@ public class GetStartedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_get_started);
 
         Preference pref = new Preference(getApplicationContext());
-        Log.d("LOGIN", "onCreate: " + pref.getUserLoggedIn());
         if(pref.getUserLoggedIn()){
             Intent gotohome = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(gotohome);
@@ -32,15 +31,6 @@ public class GetStartedActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent goToLogin = new Intent(GetStartedActivity.this, LoginActivity.class);
                 startActivity(goToLogin);
-            }
-        });
-
-        btn_new_account_create = findViewById(R.id.btn_new_account_create);
-        btn_new_account_create.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent gotoregisterone = new Intent(GetStartedActivity.this, RegisterOneActivity.class);
-                startActivity(gotoregisterone);
             }
         });
     }

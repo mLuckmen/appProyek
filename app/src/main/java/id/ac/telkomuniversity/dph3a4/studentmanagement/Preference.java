@@ -2,6 +2,7 @@ package id.ac.telkomuniversity.dph3a4.studentmanagement;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 public class Preference {
     SharedPreferences settings;
@@ -28,12 +29,19 @@ public class Preference {
         return settings.getBoolean("loggedIn", false);
     }
 
-    public void setUserCredentials(int id, String username){
+    public void removePreference(){
+        settings = context.getSharedPreferences(PREF_NAME, context.MODE_PRIVATE);
+        editor = settings.edit();
+
+        editor.clear();
+        editor.commit();
+    }
+
+    public void setUserCredentials(int id){
         settings = context.getSharedPreferences(PREF_NAME, context.MODE_PRIVATE);
         editor = settings.edit();
 
         editor.putInt("id", id);
-        editor.putString("username", username);
         editor.commit();
     }
 
